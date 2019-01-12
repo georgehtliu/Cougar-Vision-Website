@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+		<title>Current News</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="css/default.css" rel="stylesheet" type="text/css" media="all"/>
+		<style>
+			.at-grid {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				-webkit-flex-direction: row;
+				-ms-flex-direction: row;
+				flex-direction: row;
+				-webkit-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+				background: #FFF;
+				/* border: 1px solid #E2E9ED; */
+			}
+
+			.at-grid[data-column="1"] .at-column {
+				width: 100%;
+				max-width: 100%;
+				min-width: 100%;
+				-webkit-flex-basis: 100%;
+				-ms-flex-preferred-size: 100%;
+				flex-basis: 100%;
+			}
+
+			.at-grid[data-column="2"] .at-column {
+				width: 50%;
+				max-width: 50%;
+				min-width: 50%;
+				-webkit-flex-basis: 50%;
+				-ms-flex-preferred-size: 50%;
+				flex-basis: 50%;
+			}
+
+			.at-grid[data-column="3"] .at-column {
+				width: 33.33333%;
+				max-width: 33.33333%;
+				min-width: 33.33333%;
+				-webkit-flex-basis: 33.33333%;
+				-ms-flex-preferred-size: 33.33333%;
+				flex-basis: 33.33333%;
+			}
+
+			.at-grid[data-column="4"] .at-column {
+				width: 25%;
+				max-width: 25%;
+				min-width: 25%;
+				-webkit-flex-basis: 25%;
+				-ms-flex-preferred-size: 25%;
+				flex-basis: 25%;
+			}
+
+			.at-grid[data-column="5"] .at-column {
+				width: 20%;
+				max-width: 20%;
+				min-width: 20%;
+				-webkit-flex-basis: 20%;
+				-ms-flex-preferred-size: 20%;
+				flex-basis: 20%;
+			}
+
+			.at-grid[data-column="6"] .at-column {
+				width: 16.66667%;
+				max-width: 16.66667%;
+				min-width: 16.66667%;
+				-webkit-flex-basis: 16.66667%;
+				-ms-flex-preferred-size: 16.66667%;
+				flex-basis: 16.66667%;
+			}
+
+			.at-grid[data-column="7"] .at-column {
+				width: 14.28571%;
+				max-width: 14.28571%;
+				min-width: 14.28571%;
+				-webkit-flex-basis: 14.28571%;
+				-ms-flex-preferred-size: 14.28571%;
+				flex-basis: 14.28571%;
+			}
+
+			.at-grid[data-column="8"] .at-column {
+				width: 12.5%;
+				max-width: 12.5%;
+				min-width: 12.5%;
+				-webkit-flex-basis: 12.5%;
+				-ms-flex-preferred-size: 12.5%;
+				flex-basis: 12.5%;
+			}
+
+			.at-grid[data-column="9"] .at-column {
+				width: 11.11111%;
+				max-width: 11.11111%;
+				min-width: 11.11111%;
+				-webkit-flex-basis: 11.11111%;
+				-ms-flex-preferred-size: 11.11111%;
+				flex-basis: 11.11111%;
+			}
+
+			.at-column {
+				z-index: 0;
+				position: relative;
+				background: #FFF;
+				/* box-shadow: 0 0 0 1px #E2E9ED;*/
+				padding: 10px;
+				box-sizing: border-box;
+				-webkit-transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+				transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+				transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease;
+				transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+			}
+
+			.at-column:before {
+				content: "";
+				display: block;
+				padding-top: 100%;
+			}
+
+			.at-column:hover {
+				z-index: 1;
+				box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+				-webkit-transform: scale(1.05);
+				transform: scale(1.05);
+				-webkit-transition: box-shadow 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+				transition: box-shadow 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+				transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease;
+				transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+			}
+
+			.at-column:hover .at-social {
+				margin: 16px 0 0;
+				opacity: 1;
+				padding: 0;
+			}
+
+			@media (max-width: 800px) {
+				.at-column {
+					width: 50% !important;
+					max-width: 50% !important;
+					min-width: 50% !important;
+					-webkit-flex-basis: 50% !important;
+					-ms-flex-preferred-size: 50% !important;
+					flex-basis: 50% !important;
+				}
+			}
+
+			@media (max-width: 600px) {
+				.at-column {
+					width: 100% !important;
+					max-width: 100% !important;
+					min-width: 100% !important;
+					-webkit-flex-basis: 100% !important;
+					-ms-flex-preferred-size: 100% !important;
+					flex-basis: 100% !important;
+				}
+			}
+
+			.at-user {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 100%;
+				-webkit-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+				text-align: center;
+			}
+
+			.at-user__avatar {
+				width: 150px;
+				height: 150px;
+
+				border-radius: 100%;
+				margin: 0 auto 20px;
+				overflow: hidden;
+			}
+
+			.at-user__avatar img {
+				display: block;
+				width: 100%;
+				max-width: 100%;
+			}
+
+			.at-user__name {
+				color: #313435;
+				font-family: 'Roboto', sans-serif;
+				font-size: 1.5rem;
+				font-weight: 500;
+				line-height: 2.625rem;
+			}
+
+			.at-user__title {
+				color: #6F808A;
+				font-family: 'Roboto', sans-serif;
+				font-size: 0.875rem;
+				line-height: 2.375rem;
+			}
+
+			.at-social {
+				margin: 0 0 -18px;
+				opacity: 0;
+				-webkit-transition: margin 0.2s ease, opacity 0.2s ease;
+				transition: margin 0.2s ease, opacity 0.2s ease;
+			}
+
+			.at-social__item {
+				display: inline-block;
+				margin: 0 5px;
+			}
+
+			.at-social__item a {
+				display: block;
+			}
+
+			.at-social__item img {
+				fill: #515F65;
+				display: block;
+				height: 30px;
+				-webkit-transition: fill 0.2s ease;
+				transition: fill 0.2s ease;
+			}
+
+			.container-team {
+				max-width: 1170px;
+				width: 100%;
+				margin: 100px auto;
+				padding: 0 20px;
+				box-sizing: border-box;
+				-webkit-transform-origin: top center;
+				transform-origin: top center;
+				-webkit-transform: scale(0.8);
+				transform: scale(0.8);
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div id="web-heading">
+			<img src="images/top.jpg" width="100%">
+		</div>
+
+		<div id="nav">
+			<div class="nav-header">
+				<div class="nav-title">
+					<div id="loger">
+
+					</div>
+				</div>
+			</div>
+			<div class="nav-btn">
+				<label for="nav-check">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+			</div>
+			<input type="checkbox" id="nav-check">
+			<div class="nav-links">
+				<a href="index.html">Home</a>
+				<a href="" id="currentitem">Our Team</a>
+				<a href="joincv.html">Join CV</a>
+				<div class="dropdown">
+					<button class="dropbtn">
+						<a href="shows.html">Shows</a>
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="classics.html">Classics</a>
+						<a href="monday.html">Monday Show</a>
+						<a href="tuesday.html">Tuesday Show and Sportsdesk</a>
+						<a href="wednesday.html">Wednesday Show</a>
+						<a href="thursday.html">Thursday Show</a>
+						<a href="friday.html">Friday Show</a>
+					</div>
+				</div>
+				<a href="contact.html">Contact</a>
+			</div>
+
+		</div>
+
+		<div class="contents">
+
+
+			<div id="wrapper_calendar">
+				<div id="page" class="container">
+					<div id="content">
+						<h2>CougarVision 2018-2019</h2>
+						<div class="container-team">
+							<div class="at-section"></div>
+							<div data-column='4' class="at-grid">
+
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/c-baird.jpg"/></div>
+										<div class="at-user__name">Mr. Baird</div>
+										<div class="at-user__title">Teacher</div>
+										<ul class="at-social">
+
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/sean-d.jpg"/></div>
+										<div class="at-user__name">Sean D'Souza</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/terry-j2.jpg"/></div>
+										<div class="at-user__name">Terry Ju</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/ben-a.jpg"/></div>
+										<div class="at-user__name">Benjamin Amaral</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/eleni-p.jpg"/></div>
+										<div class="at-user__name">Eleni Pantieras</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/nick-h2.jpg"/></div>
+										<div class="at-user__name">Nick Hewko</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/vimal-g.jpg"/></div>
+										<div class="at-user__name">Vimal Gunasegara</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/oishee-g.jpg"/></div>
+										<div class="at-user__name">Oishee Ghosh</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/katherine-h.jpg"/></div>
+										<div class="at-user__name">Katherine Hutchinson</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/james-c.jpg"/></div>
+										<div class="at-user__name">James Caza</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+								<!--NIKLAS START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/alec-s.jpg"/></div>
+										<div class="at-user__name">Alec Stephens</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--NIKLAS END-->
+
+								<!--THEO START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/brian-h.jpg"/></div>
+										<div class="at-user__name">Brian Hu</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<!--THEO END-->
+								<!--MORITZ START-->
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/mary-w2.jpg"/></div>
+										<div class="at-user__name">Mary Wang</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+										</ul>
+									</div>
+								</div>
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/jason-t.jpg"/></div>
+										<div class="at-user__name">Jason Tao</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/manuel-b.jpg"/></div>
+										<div class="at-user__name">Manuel Baechlin</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/mindy-b.jpg"/></div>
+										<div class="at-user__name">Mindy Baroody</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/maddy.jpg"/></div>
+										<div class="at-user__name">Maddy</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/carter-c.jpg"/></div>
+										<div class="at-user__name">Carter Cummins</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/jesse-n.jpg"/></div>
+										<div class="at-user__name">Jesse Naismith</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+								<div class="at-column">
+									<div class="at-user">
+										<div class="at-user__avatar"><img src="images/students/sebastian-s.jpg"/></div>
+										<div class="at-user__name">Sebastian Santorro-Grey</div>
+										<div class="at-user__title">Student</div>
+										<ul class="at-social">
+
+										</ul>
+									</div>
+								</div>
+
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="title">
+					<div class="about__section"> <!-- Specificity container -->
+
+
+					</div>
+					<br><br>
+				</div>
+			</div>
+			<br>
+
+		</div>
+
+		<script>
+
+			window.onscroll = function () {
+				myFunction()
+			};
+
+			var navbar = document.getElementById("nav");
+
+			var sticky = navbar.offsetTop;
+			var w = window.innerWidth
+				|| document.documentElement.clientWidth
+				|| document.body.clientWidth;
+
+			function myFunction() {
+				if (w > 1010) {
+					if (window.pageYOffset >= sticky) {
+						navbar.classList.add("navstick");
+
+
+					} else {
+						navbar.classList.remove("navstick");
+
+					}
+				}
+			}
+
+			function biograph(e) {
+				if (e.className == 'about__slot') {
+					e.className = 'about__slot bio';
+				} else {
+					e.className = 'about__slot';
+				}
+			}
+
+		</script>
+		<div id="copyright" class="container">
+			<p><b> Colonel By Secondary School 2019 </b></p>
+		</div>
+	</body>
+</html>

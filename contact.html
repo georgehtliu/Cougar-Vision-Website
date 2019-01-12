@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+		<title>Contact Us</title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="css/default.css" rel="stylesheet" type="text/css" media="all"/>
+
+	</head>
+	<body>
+		<div id="web-heading">
+			<img src="images/top.jpg" width="100%">
+		</div>
+		<div id="nav">
+			<div class="nav-header">
+				<div class="nav-title">
+					<div id="loger"></div>
+				</div>
+			</div>
+			<div class="nav-btn">
+				<label for="nav-check">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+			</div>
+			<input type="checkbox" id="nav-check">
+			<div class="nav-links">
+				<a href="index.html">Home</a>
+				<a href="team.html">Our Team</a>
+				<a href="joincv.html">Join CV</a>
+				<div class="dropdown">
+					<button class="dropbtn"><a href="shows.html">Shows</a>
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="classics.html">Classics</a>
+						<a href="monday.html">Monday Show</a>
+						<a href="tuesday.html">Tuesday Show and Sportsdesk</a>
+						<a href="wednesday.html">Wednesday Show</a>
+						<a href="thursday.html">Thursday Show</a>
+						<a href="friday.html">Friday Show</a>
+					</div>
+				</div>
+				<a href="" id="currentitem">Contact</a>
+			</div>
+		</div>
+
+		<div class="contents">
+			<div id="wrapper_index">
+				<div id="page" class="container">
+					<div id="content">
+						<div class="title">
+						</div>
+					</div>
+					<div class="mapouter">
+						<div class="gmap_canvas">
+							<iframe width="600" height="500" id="gmap_canvas"
+									src="https://maps.google.com/maps?q=colonel%20by%20secondary%20school&t=&z=13&ie=UTF8&iwloc=&output=embed"
+									frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+							<a href="https://www.pureblack.de">pure black</a></div>
+						<style>
+							.mapouter {
+								text-align: right;
+								height: 500px;
+								width: 600px;
+							}
+
+							.gmap_canvas {
+								overflow: hidden;
+								background: none !important;
+								height: 500px;
+								width: 600px;
+							}
+						</style>
+					</div>
+
+				</div>
+
+				<div id="copyright" class="container">
+					<p><b> Colonel By Secondary School 2019 </b></p>
+				</div>
+			</div>
+			<script>
+
+				window.onscroll = function () {
+					myFunction()
+				};
+
+				var navbar = document.getElementById("nav");
+
+				var sticky = navbar.offsetTop;
+				var w = window.innerWidth
+					|| document.documentElement.clientWidth
+					|| document.body.clientWidth;
+
+				function myFunction() {
+					if (w > 1010) {
+						if (window.pageYOffset >= sticky) {
+							navbar.classList.add("navstick");
+
+
+						} else {
+							navbar.classList.remove("navstick");
+
+						}
+					}
+				}
+			</script>
+		</div>
+	</body>
+</html>

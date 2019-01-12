@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+		<title>Current News</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="css/default.css" rel="stylesheet" type="text/css" media="all"/>
+	</head>
+	<body>
+
+		<div id="web-heading">
+			<img src="images/top.jpg" width="100%">
+		</div>
+
+
+		<div id="nav">
+			<div class="nav-header">
+				<div class="nav-title">
+					<div id="loger">
+					</div>
+				</div>
+			</div>
+			<div class="nav-btn">
+				<label for="nav-check">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+			</div>
+			<input type="checkbox" id="nav-check">
+			<div class="nav-links">
+				<a href="index.html">Home</a>
+				<a href="team.html">Our Team</a>
+				<a href="" id="currentitem">Join CV</a>
+				<div class="dropdown">
+					<button class="dropbtn">
+						<a href="shows.html">Shows</a>
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="classics.html">Classics</a>
+						<a href="monday.html">Monday Show</a>
+						<a href="tuesday.html">Tuesday Show and Sportsdesk</a>
+						<a href="wednesday.html">Wednesday Show</a>
+						<a href="thursday.html">Thursday Show</a>
+						<a href="friday.html">Friday Show</a>
+					</div>
+				</div>
+				<a href="contact.html">Contact</a>
+			</div>
+
+		</div>
+
+		<div class="contents">
+
+
+			<div id="wrapper_calendar">
+				<div id="page" class="container">
+					<div id="content">
+						<div class="title">
+
+
+							<h2>Join CougarVision</h2>
+						</div>
+
+						<p>
+						<p><img src="images/joincvpic.JPG" alt="HTML5 Icon" style="width:60%;height:50%;">
+
+						<p>
+						<h3>Prerequisites</h3>
+
+						<p>Cougar Vision is listed as TGV4M, and requires prerequisites of either Communications Technology (TGJ3M), ITGS:
+							Information Technology for a Global Society (TGJ3ME), or Yearbook Production (TGP3M).
+
+						<p>
+						<p><img src="images/chart.jpg" alt="HTML5 Icon" style="width:450px;height:256px;">
+
+						<p>
+						<h3>Course Description</h3>
+
+						<p>The digital broadcasting course encourages students to develop the skills necessary to achieve creative and critical independence in their knowledge,
+							experience and enjoyment of television production. Students will develop an appreciation and understanding of the entire process of television
+							production,
+							and perform critical evaluation of their own and other broadcasts while working in “pods” to create a daily newsmagazine broadcast – “CougarVision.”
+							Additionally students will be provided the opportunity to demonstrate their skills in the creation of augmented reality videos.
+					</div>
+				</div>
+				<br>
+			</div>
+		</div>
+		<script>
+
+			window.onscroll = function () {
+				myFunction()
+			};
+
+			var navbar = document.getElementById("nav");
+
+			var sticky = navbar.offsetTop;
+			var w = window.innerWidth
+				|| document.documentElement.clientWidth
+				|| document.body.clientWidth;
+
+			function myFunction() {
+				if (w > 1010) {
+					if (window.pageYOffset >= sticky) {
+						navbar.classList.add("navstick");
+
+
+					} else {
+						navbar.classList.remove("navstick");
+
+					}
+				}
+			}
+		</script>
+		<div id="copyright" class="container">
+			<p><b> Colonel By Secondary School 2019 </b>
+		</div>
+	</body>
+</html>
