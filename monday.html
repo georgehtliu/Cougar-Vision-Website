@@ -5,7 +5,149 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 		<title>Shows</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href="css/default.css" rel="stylesheet" type="text/css" media="all">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+		<style>
+			/**
+			 * Grid styles
+			 */
+			.video-grid.front-page {
+				max-width: 1280px;
+				margin: 0 auto;
+				padding: 1em 2em;
+			}
+
+			ul.video-list {
+				display: flexbox;
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			li.video {
+				flex-grow: 1;
+				position: relative;
+				ooverflow: hidden;
+				width: 33.333333333%;
+				width: -webkit-calc(100% / 3);
+				width: calc(100% / 3);
+				border: solid 0.2em transparent;
+			}
+			li.video a {
+				outline: none;
+			}
+			li.video:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0);
+				transition: background-color .15s;
+			}
+			li.video figure {
+				display: block;
+				position: relative;
+				overflow: hidden;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+			}
+			li.video figure img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+				opacity: 0;
+				transform: scale(0.5);
+				transition: all .20s;
+			}
+			li.video figure figcaption {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				background: rgba(0, 0, 0, 0.6);
+				color: #fff;
+				font-size: 1.4rem;
+				font-weight: 600;
+				padding: 1rem;
+				transform: translateY(0);
+				opacity: 1;
+				transition: all .20s;
+			}
+			li.video:hover figure img {
+				opacity: 1;
+				transform: scale(1);
+			}
+			li.video:hover figure figcaption {
+				opacity: 0;
+				transform: translateY(50%);
+			}
+			li.video:hover:before {
+				background-color: rgba(0, 0, 0, 0.3);
+			}
+
+			@media screen and (max-width: 800px) {
+				li.video {
+					width: 50%;
+					width: -webkit-calc(100% / 2);
+					width: calc(100% / 2);
+				}
+			}
+			@media screen and (max-width: 640px) {
+				li.video {
+					width: 100%;
+				}
+			}
+			/**
+			 * Pen styles
+			 */
+			html {
+				box-sizing: border-box;
+				height: 100%;
+				overflow-y: scroll;
+				font-size: 62.5%;
+			}
+
+			*, *:before, *:after {
+				box-sizing: inherit;
+			}
+
+			body {
+				background: #fff;
+				color: #444;
+				font-family: 'Open Sans', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+				font-size: 1.8rem;
+				line-height: 1.2;
+			}
+
+			header {
+				width: 100%;
+				padding: 2em;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+			}
+			header h1 {
+				font-size: 3rem;
+				font-weight: 700;
+				text-align: center;
+				letter-spacing: -0.03em;
+				color: #666;
+			}
+
+			main {
+				padding: 2rem 0;
+			}
+
+			article {
+				max-width: 1280px;
+				margin: 0 auto;
+				padding: 1em 2em;
+			}
+
+			</style>
+	</head>
 	<body>
 		<div id="web-heading">
 			<img src="images/top.jpg" width="100%">
@@ -29,7 +171,19 @@
 				<a href="index.html">Home</a>
 				<a href="team.html">Our Team</a>
 				<a href="joincv.html">Join CV</a>
-				<a href="" id="currentitem">Shows</a>
+				<div class="dropdown">
+					<button class="dropbtn"><a href="shows.html">Shows</a>
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="classics.html">Classics</a>
+						<a href="monday.html">Monday Show</a>
+						<a href="tuesday.html">Tuesday Show and Sportsdesk</a>
+						<a href="wednesday.html">Wednesday Show</a>
+						<a href="thursday.html">Thursday Show</a>
+						<a href="friday.html">Friday Show</a>
+					</div>
+				</div>
 				<a href="contact.html">Contact</a>
 			</div>
 		</div>
@@ -37,33 +191,180 @@
 			<div id="wrapper_calendar">
 				<div id="page" class="container">
 					<div id="content">
-						<div class="title">
-							<h2>Latest Shows</h2>
-							<p>Catch up on all the latest CB news with today's show
-							</p>
-						</div>
-						<div id="cp_widget_d23bb8bb-8a6f-4993-a584-0cd1addae29f">...</div>
-						<script type="text/javascript">
-							var cpo = [];
-							cpo["_object"] = "cp_widget_d23bb8bb-8a6f-4993-a584-0cd1addae29f";
-							cpo["_fid"] = "AAOA3aeefuCP";
-							var _cpmp = _cpmp || [];
-							_cpmp.push(cpo);
-							(function () {
-								var cp = document.createElement("script");
-								cp.type = "text/javascript";
-								cp.async = true;
-								cp.src = "http://www.cincopa.com/media-platform/runtime/libasync.js";
-								var c = document.getElementsByTagName("script")[0];
-								c.parentNode.insertBefore(cp, c);
-							})(); </script>
-					</div>
-				</div>
+						<header class="header" role="banner">
+  <h1>2018-2019 Monday Shows</h1>
+</header>
+						<main role="main">
+						  <article>
+						    <p>Watch all Monday shows here.</p>
+						  </article>
+						  <section class="videos" id="featured-videos">
+						    <div class="video-grid front-page" id="front-page-videos">
+						      <ul class="video-list featured">
+						        <li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+						        <li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/qDK86kzgUPg?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/qDK86kzgUPg/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Cummins Diesel in a Cadillac</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+						        <li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/uSB2_428P2w?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/uSB2_428P2w/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Dirt-Track Challenger Rescue and Thrash</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+						        <li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/pOhl6oVpEes?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/pOhl6oVpEes/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Junkyard 1956 Buick Hack</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+						        <li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/PVs_xZ46Cxw?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/PVs_xZ46Cxw/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Wheelstanding Dump Truck! Stubby Bob’s Comeback</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+						        <li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/C4jk51rgfts?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/C4jk51rgfts/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Will It Go 10s? Mazdarati Is Back!</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+										<li class="video featured">
+						          <a data-fancybox href="https://www.youtube.com/embed/Zq6Crtglztk?autoplay=1&controls=0&showinfo=0&color=white&rel=0" class="featured-video">
+						            <figure style="background-image: url(https://img.youtube.com/vi/Zq6Crtglztk/hqdefault.jpg);">
+						              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" />
+						              <figcaption>Swap-Meet Speed for Roadkill Nights</figcaption>
+						            </figure>
+						          </a>
+						        </li>
+						      </ul>
+						    </div
+						  </section>
+						</main>
 
+					</div>
+
+				</div>
 			</div>
-			<div id="copyright" class="container">
-				<p><b> Colonel By Secondary School 2019 </b></p>
-			</div>
+		</div>
+		<div id="copyright" class="container">
+			<p><b> Colonel By Secondary School 2019 </b></p>
 		</div>
 	</body>
 </html>
