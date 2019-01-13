@@ -295,6 +295,7 @@ h5 {
 		height: 290px;
 		margin-top: 79px;
 		overflow-y: hidden;
+		z-index: 100;
 	}
 
 	#nav > .navstick {
@@ -1371,6 +1372,14 @@ border-bottom:1px solid #a2a2a2;
 width: 35px;
 display: inline-block;
 margin: 20px;
+}
+
+.seperator {
+border-bottom:1px solid #a2a2a2;
+width: 20%;
+display: inline-block;
+margin-top: 2%;
+margin-bottom: 2%;
 }
 
 .section1 h1 {
