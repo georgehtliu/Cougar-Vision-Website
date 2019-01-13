@@ -1121,8 +1121,7 @@ html, body {
 .container-team {
 	max-width: 1170px;
 	width: 100%;
-	margin: 100px auto;
-	padding: 0 20px;
+	margin: 4% auto;
 	box-sizing: border-box;
 	-webkit-transform-origin: top center;
 	transform-origin: top center;
