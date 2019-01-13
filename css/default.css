@@ -325,7 +325,7 @@ h5 {
 
 #banner-wrapper {
 	overflow: hidden;
-	background: rgb(222, 217, 217);
+	background: white;
 	padding: 2em 5%;
 }
 
@@ -1493,7 +1493,7 @@ font-size: 28px;
 }
 
 /*********************************************************************************/
-/* dropdown                                                                    */
+/* sliding button                                                                  */
 /*********************************************************************************/
 
 @import url("https://fonts.googleapis.com/css?family=Mukta:700");
