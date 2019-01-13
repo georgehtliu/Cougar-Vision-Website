@@ -117,5 +117,30 @@
 		<div id="copyright" class="container">
 			<p><b> Colonel By Secondary School 2019 </b></p>
 		</div>
+		<script>
+			window.onscroll = function () {
+				myFunction()
+			};
+
+			var navbar = document.getElementById("nav");
+
+			var sticky = navbar.offsetTop;
+			var w = window.innerWidth ||
+				document.documentElement.clientWidth ||
+				document.body.clientWidth;
+
+			function myFunction() {
+				if (w > 1010) {
+					if (window.pageYOffset >= sticky) {
+						navbar.classList.add("navstick");
+
+
+					} else {
+						navbar.classList.remove("navstick");
+
+					}
+				}
+			}
+		</script>
 	</body>
 </html>
