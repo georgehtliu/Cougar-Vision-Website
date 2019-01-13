@@ -63,118 +63,123 @@
 					<a href="shows.html" class="button" style="float: right;">Watch Today's Show</a>
 				</div>
 			</div>
-				<div class="slideshow-container">
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/banner.jpg);background-position: center;background-size: cover;">
-					</div>
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/cvdoor.jpg);background-position: center;background-size: cover;">
-					</div>
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/mannequin.jpg);background-position: center;background-size: cover;">
-					</div>
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/computer-student.JPG);background-position: center;background-size: cover;">
-					</div>
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/hallway.JPG);background-position: center;background-size: cover;">
-					</div>
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/students-working.JPG);background-position: center;background-size: cover;">
-					</div>
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/cbdoor.jpg);background-position: center;background-size: cover;">
-					</div>
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/window.jpg);background-position: center;background-size: cover;">
-					</div>
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/hall2.jpg);background-position: center;background-size: cover;">
-					</div>
-					<div class="mySlides fade"
-						 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/sitting-students.JPG);background-position: center;background-size: cover;">
-					</div>
+			<div class="slideshow-container">
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/banner.jpg);background-position: center;background-size: cover;">
 				</div>
-				<br>
-				<div style="text-align:center; padding-bottom: 1%">
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/cvdoor.jpg);background-position: center;background-size: cover;">
 				</div>
-				<script>
-					var slideIndex = 0;
-					showSlides();
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/mannequin.jpg);background-position: center;background-size: cover;">
+				</div>
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/computer-student.JPG);background-position: center;background-size: cover;">
+				</div>
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/hallway.JPG);background-position: center;background-size: cover;">
+				</div>
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/students-working.JPG);background-position: center;background-size: cover;">
+				</div>
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/cbdoor.jpg);background-position: center;background-size: cover;">
+				</div>
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/window.jpg);background-position: center;background-size: cover;">
+				</div>
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/hall2.jpg);background-position: center;background-size: cover;">
+				</div>
+				<div class="mySlides fade"
+					 style="width:100%;top: 1000px;height: 35em;padding-left: 5em;background-image: url(images/sitting-students.JPG);background-position: center;background-size: cover;">
+				</div>
+			</div>
+			<br>
+			<div style="text-align:center; padding-bottom: 1%">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
 
-					function showSlides() {
-						var i;
-						var slides = document.getElementsByClassName("mySlides");
-						var dots = document.getElementsByClassName("dot");
-						for (i = 0; i < slides.length; i++) {
-							slides[i].style.display = "none";
-						}
-						slideIndex++;
-						if (slideIndex > slides.length) {
-							slideIndex = 1
-						}
-						for (i = 0; i < dots.length; i++) {
-							dots[i].className = dots[i].className.replace(" active", "");
-						}
-						slides[slideIndex - 1].style.display = "block";
-						dots[slideIndex - 1].className += " active";
-						setTimeout(showSlides, 2000); // Change image every 2 seconds
+			</div>
+			<script>
+				var slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("dot");
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
 					}
-				</script>
+					slideIndex++;
+					if (slideIndex > slides.length) {
+						slideIndex = 1
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex - 1].style.display = "block";
+					dots[slideIndex - 1].className += " active";
+					setTimeout(showSlides, 2000); // Change image every 2 seconds
+				}
+			</script>
 
-				<div id="wrapper_index">
-					<div id="page" class="container">
-						<div id="contentmobile">
-							<div id="content">
-								<div class="title">
+			<div id="wrapper_index">
+				<div id="page" class="container">
+					<div id="contentmobile">
+						<div id="content">
+							<div class="title">
                         <span class="extrainfo">
                            <h2>About CougarVision</h2>
 													 <span class="seperator"></span>
                         </span>
-								</div>
-								<p>Founded in 1999 Colonel By’s CougarVision was Canada’s first all-digital television station.
-									<p><br>
-								<p>The program produces a daily 7 minute newsmagazine show that airs each morning on televisions mounted in every classroom in the school. The daily
-									show includes coverage of school events and activities, advertisements for upcoming events, the daily news and announcements, as well as special
-									features of Colonel By students and staff. Monday, Wednesday, and Thursday shows are an eclectic mix of Colonel By news and events. Tuesday is
-									our
-									very own Sportsdesk with highlights, interviews and coverage of all of Colonel By’s Varsity Athletics and Friday is a dose of entertainment and
-									comic relief with the ever popular Friday Variety Show.
-									<p><br>
-								<p>In addition to producing a Daily Show that airs on CougarVision the class creates a monthly newsmagazine show called High School Happenings that airs on Rogers TV Ottawa 9 times a
-									month.
-									The 30-minute show features coverage of events and activities taking place at high schools across Ottawa.
-									<p><br>
-								<p>Students in the program work in small teams or pods and are responsible for all facets of the creation of their weekly show and High School
-									Happenings segments including writing, scripting, filming, audio, editing and postproduction.
-									<p><br>
-								<p>A tremendous number of CougarVision students pursue this filed in post secondary school and many have gone on to very successful careers in a
-									myriad
-									of areas including Sportsnet, CBC, CTV, the Space Channel, National Geographic, Motion Pictures and much more.</p>
-								<br>
-								The digital broadcasting course encourages students to develop the skills necessary to achieve creative and critical independence in their knowledge, experience and enjoyment of television production. Students will develop an appreciation and understanding of the entire process of television production, and perform critical evaluation of their own and other broadcasts while working in “pods” to create a daily newsmagazine broadcast – “CougarVision.” Additionally students will be provided the opportunity to demonstrate their skills in the creation of augmented reality videos.
-								<br>
-								<br>
-
 							</div>
+							<p>Founded in 1999 Colonel By’s CougarVision was Canada’s first all-digital television station.
+							<p><br>
+							<p>The program produces a daily 7 minute newsmagazine show that airs each morning on televisions mounted in every classroom in the school. The daily
+								show includes coverage of school events and activities, advertisements for upcoming events, the daily news and announcements, as well as special
+								features of Colonel By students and staff. Monday, Wednesday, and Thursday shows are an eclectic mix of Colonel By news and events. Tuesday is
+								our
+								very own Sportsdesk with highlights, interviews and coverage of all of Colonel By’s Varsity Athletics and Friday is a dose of entertainment and
+								comic relief with the ever popular Friday Variety Show.
+							<p><br>
+							<p>In addition to producing a Daily Show that airs on CougarVision the class creates a monthly newsmagazine show called High School Happenings that airs
+								on Rogers TV Ottawa 9 times a
+								month.
+								The 30-minute show features coverage of events and activities taking place at high schools across Ottawa.
+							<p><br>
+							<p>Students in the program work in small teams or pods and are responsible for all facets of the creation of their weekly show and High School
+								Happenings segments including writing, scripting, filming, audio, editing and postproduction.
+							<p><br>
+							<p>A tremendous number of CougarVision students pursue this filed in post secondary school and many have gone on to very successful careers in a
+								myriad
+								of areas including Sportsnet, CBC, CTV, the Space Channel, National Geographic, Motion Pictures and much more.</p>
+							<br>
+							The digital broadcasting course encourages students to develop the skills necessary to achieve creative and critical independence in their knowledge,
+							experience and enjoyment of television production. Students will develop an appreciation and understanding of the entire process of television
+							production, and perform critical evaluation of their own and other broadcasts while working in “pods” to create a daily newsmagazine broadcast –
+							“CougarVision.” Additionally students will be provided the opportunity to demonstrate their skills in the creation of augmented reality videos.
+							<br>
+							<br>
+
 						</div>
-						<center><a href="https://www.rogerstv.com/show?lid=12&rid=4&sid=7123&gid=270972" class="button" style="color: white; background: red;">Watch High School Happenings</a></center>
 					</div>
+					<center><a href="https://www.rogerstv.com/show?lid=12&rid=4&sid=7123&gid=270972" class="button" style="color: white; background: red;">Watch High School
+						Happenings</a></center>
 				</div>
-				<div id="copyright" class="container">
-					<p><b> Colonel By Secondary School 2019 </b></p>
-				</div>
+			</div>
+			<div id="copyright" class="container">
+				<p><b> Colonel By Secondary School 2019 </b></p>
+			</div>
 		</div>
 		<script>
 			window.onscroll = function () {
