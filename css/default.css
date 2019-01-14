@@ -6,6 +6,10 @@ html, body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+b {
+	color: white;
+}
+
 .navstick {
 	position: fixed;
 	top: 0;
