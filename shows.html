@@ -1,200 +1,328 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-<style>
-body {
-  			margin: 30px;
-  			padding: 0;
-  			background: #ddd;
-  			font-family: Arial, Helvetica, sans-serif;
-  		}
+<html lang="en">
 
-  		.title {
-  			width: 100%;
-  			max-width: 854px;
-  			margin: 0 auto;
-  		}
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+		<title>Shows</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="css/default.css" rel="stylesheet" type="text/css" media="all">
+		<link rel="shortcut icon" type="image/png" href="images/logo.jpg"/>
+		<style>
+		#ypt_wrapper {
+  width: 100%;
+  background: #FFF;
+  //color: #000;
+  overflow: hidden;
+  max-width: 100%;
+  box-shadow: 0px 8px 13px rgba(0,0,0,0.5);
+  margin-bottom: 1em;
+}
 
-  		.caption {
-  			width: 100%;
-  			max-width: 854px;
-  			margin: 0 auto;
-  			padding: 20px 0;
-  		}
+#ypt_thumbs {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 20%;
+  background: #000;
+  margin: 0;
+  padding: 0;
+  height: 0;
+}
 
-  		.vid-main-wrapper {
-  			width: 100%;
-  			max-width: 1100px;
-  			min-width: 440px;
-  			background: #fff;
-  			margin: 0 auto;
-  		}
+#ypt_thumbs li {
+  list-style: none;
+  margin: 0;
+  position: relative;
+  font-size: 0;
+}
+
+#ypt_thumbs li img{
+  width: 100%;
+}
+
+#ypt_thumbs li p {
+  font-family: arial;
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  padding: 5%;
+  margin: 0;
+}
+
+#ypt_thumbs li:hover p {
+  display: block;
+  cursor: pointer;
+}
+
+#ypt_thumbs .ypt-now-playing p {
+  display: block;
+}
+
+#ypt_thumbs .ypt-now-playing > span::after {
+  content: "\25b6  Now playing"; /* A traingle pointing right */
+  margin-top: -1em;
+  display: block;
+  width: 100%;
+  padding: 5%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  font-size: 10px;
+}
+
+#ypt_wrapper .video {
+  position: relative;
+  width: 80%;
+  /*height: 0;*/
+  padding-bottom: 48.4%;
+  float: left;
+}
+
+#ypt_wrapper .video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  float:left;
+}
+
+@media only screen and (max-width : 400px) {
+  #ypt_thumbs {
+    display: none;
+  }
+  #ypt_wrapper .video {
+    width: 100%;
+    padding-bottom: 56.25%;
+  }
+}
+		</style>
+	</head>
+	<body>
+		<div id="web-heading">
+			<img src="images/header2.jpg" width="100%">
+		</div>
+		<div id="nav">
+			<div class="nav-header">
+				<div class="nav-title">
+					<div id="loger">
+					</div>
+				</div>
+			</div>
+			<div class="nav-btn">
+				<label for="nav-check">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+			</div>
+			<input type="checkbox" id="nav-check">
+			<div class="nav-links">
+				<a href="index.html">Home</a>
+				<a href="team.html">Our Team</a>
+				<a href="joincv.html">Join CV</a>
+				<div class="dropdown">
+					<button class="dropbtn"><a href="shows.html">Shows</a>
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="shows.html">Latest</a>
+						<a href="classics.html">Classics</a>
+						<a href="monday.html">Monday Show</a>
+						<a href="tuesday.html">Tuesday Show and Sportsdesk</a>
+						<a href="wednesday.html">Wednesday Show</a>
+						<a href="thursday.html">Thursday Show</a>
+						<a href="friday.html">Friday Show</a>
+						<a href="https://www.youtube.com/channel/UChvHTB94LpazNmc4ppL3NCg">Youtube Channel</a>
+					</div>
+				</div>
+				<a href="contact.html">Contact</a>
+			</div>
+		</div>
+		<div class="contents">
+			<div id="wrapper_calendar">
+				<div id="page" class="container">
+					<div id="content">
+						<div class="title">
+							<h2>Latest Shows</h2>
+							<br>
+							<p>Catch up on all the latest CB news with today's show.
+								<br>
+								<br>
+							</p>
+						</div>
+						<div id="ypt_wrapper">
+						     <div class="video">
+						      <div id="player" data-pl="PLEo-2esunoJ3q5Opj2WPut7blSvbVifpL"></div>
+						    </div>
+						    <ul id="ypt_thumbs"></ul>
+						</div>
 
 
-  		/*  VIDEO PLAYER CONTAINER
- 		############################### */
-  		.vid-container {
-		    position: relative;
-		    padding-bottom: 52%;
-		    padding-top: 30px;
-		    height: 0;
-        width:70%;
-        float:left;
-		}
+					</div>
 
-		.vid-container iframe,
-		.vid-container object,
-		.vid-container embed {
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    width: 100%;
-		    min-height: 360px;
-		}
+				</div>
+			</div>
+		</div>
+		<div id="copyright" class="container">
+			<p><b> Colonel By Secondary School 2019 </b></p>
+		</div>
+		<script>
+			window.onscroll = function () {
+				myFunction()
+			};
 
+			var navbar = document.getElementById("nav");
 
-		/*  VIDEOS PLAYLIST
- 		############################### */
-		.vid-list-container {
-			width: 30%;
-      height:360px;
-			overflow: hidden;
-      float:right;
-		}
+			var sticky = navbar.offsetTop;
+			var w = window.innerWidth ||
+				document.documentElement.clientWidth ||
+				document.body.clientWidth;
 
-    .vid-list-container:hover, .vid-list-container:focus {
-       overflow-y: auto;
-     }
-
-		ol#vid-list {
-      margin:0;
-      padding:0;
-      background: #222;
-		}
-
-    ol#vid-list li {
-		  list-style: none;
-    }
-
-    ol#vid-list li a {
-      text-decoration: none;
-      background-color: #222;
-      height:55px;
-      display:block;
-      padding:10px;
-    }
-
-    ol#vid-list li a:hover {
-      background-color:#666666
-    }
-
-		.vid-thumb {
-      float:left;
-			margin-right: 8px;
-		}
-
-    .active-vid {
-      background:#3A3A3A;
-    }
-
-		#vid-list .desc {
-			color: #CACACA;
-			font-size: 13px;
-			margin-top:5px;
-		}
+			function myFunction() {
+				if (w > 1010) {
+					if (window.pageYOffset >= sticky) {
+						navbar.classList.add("navstick");
 
 
-		@media (max-width: 624px) {
-			body {
-				margin: 15px;
+					} else {
+						navbar.classList.remove("navstick");
+
+					}
+				}
 			}
-			.caption {
-				margin-top: 40px;
-			}
-			.vid-list-container {
-				padding-bottom: 20px;
-			}
+			// Load Youtube IFrame Player API code asynchronously. This boat is going nowhere without it.
+var tag = document.createElement('script'); //Add a script tag
+tag.src = "https://www.youtube.com/iframe_api"; //Set the SRC to get the API
+var firstScriptTag = document.getElementsByTagName('script')[0]; //Find the first script tag in the html
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); //Put this script tag before the first one
 
-		}
-</style>
-</head>
-<body>
+var player; //The Youtube API player
+var ypt_player = document.getElementById('player');
+var playlistID = ypt_player.getAttribute('data-pl');
+var ypt_thumbs = document.getElementById('ypt_thumbs');
+var nowPlaying = "ypt-now-playing"; //For marking the current thumb
+var nowPlayingClass = "." + nowPlaying;
+var ypt_index = 0; //Playlists begin at the first video by default
 
-<div class="vid-main-wrapper clearfix">
+function getPlaylistData(playlistID, video_list, page_token) { //Makes a single request to Youtube Data API
+  var apiKey = 'AIzaSyArQNfmJDkjxP_ZyZIocbyuDeyTanf4Rl8';
+  var theUrl =
+  'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet' +
+  '&maxResults='+ 50 + //Can be anything from 1-50
+  '&playlistId=' + playlistID +
+  '&key=' + apiKey
+  ;
+  if(page_token){ theUrl +=('&pageToken=' + page_token );} //If there is page token, start there
+  var xmlHttp = null;
+  xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", theUrl, true);
+  xmlHttp.send( null );
+  xmlHttp.onload = function (e) { //when the request comes back
+    buildJSON(xmlHttp.responseText, video_list, playlistID); //send the data to buildJSON
+  };
+}
 
-  		    <!-- THE YOUTUBE PLAYER -->
-      <div class="vid-container">
-          <iframe id="vid_frame" src="https://www.youtube.com/embed/lXyAL0rjTHg?rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
-      </div>
+function buildJSON(response, list, playlistID){ //Takes the text response and adds it to any existing JSON data
+  var results = JSON.parse(response); //Parse it
+  if(!list){ list = []; } //If there is no list to add to, make one
+  list.push.apply(list,results.items); //Add JSON data to the list
+  if(results.nextPageToken){ //If the results included a page token
+    getPlaylistData(playlistID, list, results.nextPageToken); //Create another data API request including the current list and page token
+  } else { //If there is not a next-page token
+    buildHTML(list); //Send the JSON data to buildHTML
+  }
+}
 
-      <!-- THE PLAYLIST -->
-      <div class="vid-list-container">
-            <ol id="vid-list">
-              <li>
-                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/lXyAL0rjTHg?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/cOSEOYi9JS4/default.jpg" /></span>
-                  <div class="desc">WeatherBeater™ Product Video</div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/lXyAL0rjTHg?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/lXyAL0rjTHg/default.jpg" /></span>
-                  <div class="desc">X-act Contour® Product Video</div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/lXyAL0rjTHg?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/KHxNpXovl58/default.jpg" /></span>
-                  <div class="desc">GearBox® Product Video</div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/D_a2UBGsePQ?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/D_a2UBGsePQ/default.jpg" /></span>
-                  <div class="desc">Mud Guards Product Video</div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/vYoh2IgoBXg?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/vYoh2IgoBXg/default.jpg" /></span>
-                  <div class="desc">Wheel Well Guards Product Video</div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/RTHI_uGyfTM?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/RTHI_uGyfTM/default.jpg" /></span>
-                  <div class="desc">Cargo Liner Product Video</div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/EvTjAjLNphE?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/EvTjAjLNphE/default.jpg" /></span>
-                  <div class="desc">Husky Liners Products</div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/-Qpc79oaJQg?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/-Qpc79oaJQg/default.jpg" /></span>
-                  <div class="desc">Custom Molded Mud Guards</div>
-                </a>
-              </li>
+function buildHTML(data){ //Turns JSON data into HTML elements
+  var list_data = ''; //A string container
+  for(i = 0; i < data.length; i++){ //Do this to each item in the JSON list
+    var item = data[i].snippet; //Each Youtube playlist item snippet
+    if(!item.thumbnails){continue;} //private videos do no reveal thumbs, so skip them
+    list_data += '<li data-ypt-index="'+ i +'"><p>' + item.title + '</p><span><img alt="'+ item.title +'" src="'+ item.thumbnails.medium.url +'"/></span></li>'; //create an element and add it to the list
+  }
+  ypt_thumbs.innerHTML = list_data; //After the for loop, insert that list of links into the html
+}
 
-            </ul>
-       </div>
+function yptThumbHeight(){
+  ypt_thumbs.style.height = document.getElementById('player').clientHeight + 'px'; //change the height of the thumb list
+  //breaks if ypt_player.clientHeight + 'px';
+}
 
+function onPlayerReady(event) { //Once the player is ready...
+  yptThumbHeight(); //Set the thumb containter height
+}
 
-</div>
-<script>
-$(document).ready(function () {
-  $('.vid-item').each(function(index){
-    $(this).on('click', function(){
-      var current_index = index+1;
-      $('.vid-item .thumb').removeClass('active');
-      $('.vid-item:nth-child('+current_index+') .thumb').addClass('active');
-    });
+getPlaylistData(playlistID);
+
+//Once the Youtube Iframe API is ready...
+window.onYouTubeIframeAPIReady = function() { // Creates an <iframe> (and YouTube player) after the API code downloads. must be globally available
+  player = new YT.Player('player', {
+    height: '360',
+    width: '640',
+    playerVars:
+    {
+      listType:'playlist',
+      list: playlistID
+    },
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
   });
-});
-</script>
-</body>
+
+  // When the player does something...
+  function onPlayerStateChange(event) {
+
+    //Let's check on what video is playing
+    var currentIndex = player.getPlaylistIndex();
+    var the_thumbs = ypt_thumbs.getElementsByTagName('li');
+    var currentThumb = the_thumbs[currentIndex];
+
+    if (event.data == YT.PlayerState.PLAYING) { //A video is playing
+
+      for (var i = 0; i < the_thumbs.length; i++) { //Loop through the thumbs
+        the_thumbs[i].className = ""; //Remove nowplaying from each thumb
+      }
+
+      currentThumb.className = nowPlaying; //this will also erase any other class belonging to the li
+      //need to do a match looking for now playing
+    }
+
+    //if a video has finished, and the current index is the last video, and that thumb already has the nowplaying class
+    if (event.data == YT.PlayerState.ENDED && currentIndex == the_thumbs.length - 1 && the_thumbs[currentIndex].className == nowPlaying){
+      jQuery.event.trigger('playlistEnd'); //Trigger a global event
+    }
+  } //function onPlayerStateChange(event)
+
+  //When the user changes the window size...
+  window.addEventListener('resize', function(event){
+    yptThumbHeight(); //change the height of the thumblist
+  });
+
+  //When the user clicks an element with a playlist index...
+  jQuery(document).on('click','[data-ypt-index]:not(".ypt-now-playing")',function(e){ //click on a thumb that is not currently playing
+    ypt_index = Number(jQuery(this).attr('data-ypt-index')); //Get the ypt_index of the clicked item
+    if(navigator.userAgent.match(/(iPad|iPhone|iPod)/g)){ //if IOS
+      player.cuePlaylist({ //cue is required for IOS 7
+        listType: 'playlist',
+        list: playlistID,
+        index: ypt_index,
+        suggestedQuality: 'hd720' //quality is required for cue to work, for now
+        // https://code.google.com/p/gdata-issues/issues/detail?id=5411
+      }); //player.cuePlaylist
+    } else { //yay it's not IOS!
+    player.playVideoAt(ypt_index); //Play the new video, does not work for IOS 7
+  }
+  jQuery(nowPlayingClass).removeClass(nowPlaying); //Remove "now playing" from the thumb that is no longer playing
+  //When the new video starts playing, its thumb will get the now playing class
+}); //jQuery(document).on('click','#ypt_thumbs...
+};
+		</script>
+	</body>
 </html>
