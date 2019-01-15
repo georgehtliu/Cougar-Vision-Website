@@ -1291,6 +1291,10 @@ li.video:hover:before {
 	}
 }
 
+ul {
+	list-style-type: none;
+}
+
 /**
  * Pen styles
  */
