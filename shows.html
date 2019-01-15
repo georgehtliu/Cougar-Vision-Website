@@ -1,106 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+<title>Page Title</title>
+<style>
+body {
+  			margin: 30px;
+  			padding: 0;
+  			background: #ddd;
+  			font-family: Arial, Helvetica, sans-serif;
+  		}
 
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-		<title>Shows</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href="css/default.css" rel="stylesheet" type="text/css" media="all">
-		<link rel="shortcut icon" type="image/png" href="images/logo.jpg"/>
-	<body>
-		<div id="web-heading">
-			<img src="images/header2.jpg" width="100%">
-		</div>
-		<div id="nav">
-			<div class="nav-header">
-				<div class="nav-title">
-					<div id="loger">
-					</div>
-				</div>
-			</div>
-			<div class="nav-btn">
-				<label for="nav-check">
-					<span></span>
-					<span></span>
-					<span></span>
-				</label>
-			</div>
-			<input type="checkbox" id="nav-check">
-			<div class="nav-links">
-				<a href="index.html">Home</a>
-				<a href="team.html">Our Team</a>
-				<a href="joincv.html">Join CV</a>
-				<div class="dropdown">
-					<button class="dropbtn"><a href="shows.html">Shows</a>
-						<i class="fa fa-caret-down"></i>
-					</button>
-					<div class="dropdown-content">
-						<a href="shows.html">Latest</a>
-						<a href="classics.html">Classics</a>
-						<a href="monday.html">Monday Show</a>
-						<a href="tuesday.html">Tuesday Show and Sportsdesk</a>
-						<a href="wednesday.html">Wednesday Show</a>
-						<a href="thursday.html">Thursday Show</a>
-						<a href="friday.html">Friday Show</a>
-						<a href="https://www.youtube.com/channel/UChvHTB94LpazNmc4ppL3NCg">Youtube Channel</a>
-					</div>
-				</div>
-				<a href="contact.html">Contact</a>
-			</div>
-		</div>
-		<div class="contents">
-			<div id="wrapper_calendar">
-				<div id="page" class="container">
-					<div id="content">
-						<div class="title">
-							<h2>Latest Shows</h2>
-							<br>
-							<p>Catch up on all the latest CB news with today's show.
-								<br>
-								<br>
-							</p>
-						</div>
-						<div id="cp_widget_850f4181-c494-405b-b126-df4957c2fef4">...</div><script type="text/javascript">
-var cpo = []; cpo["_object"] ="cp_widget_850f4181-c494-405b-b126-df4957c2fef4"; cpo["_fid"] = "AAOA3aeefuCP";
-var _cpmp = _cpmp || []; _cpmp.push(cpo);
-(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
-cp.async = true; cp.src = "http://www.cincopa.com/media-platform/runtime/libasync.js";
-var c = document.getElementsByTagName("script")[0];
-c.parentNode.insertBefore(cp, c); })(); </script>
+  		.title {
+  			width: 100%;
+  			max-width: 854px;
+  			margin: 0 auto;
+  		}
 
-					</div>
+  		.caption {
+  			width: 100%;
+  			max-width: 854px;
+  			margin: 0 auto;
+  			padding: 20px 0;
+  		}
 
-				</div>
-			</div>
-		</div>
-		<div id="copyright" class="container">
-			<p><b> Colonel By Secondary School 2019 </b></p>
-		</div>
-		<script>
-			window.onscroll = function () {
-				myFunction()
-			};
-
-			var navbar = document.getElementById("nav");
-
-			var sticky = navbar.offsetTop;
-			var w = window.innerWidth ||
-				document.documentElement.clientWidth ||
-				document.body.clientWidth;
-
-			function myFunction() {
-				if (w > 1010) {
-					if (window.pageYOffset >= sticky) {
-						navbar.classList.add("navstick");
+  		.vid-main-wrapper {
+  			width: 100%;
+  			max-width: 1100px;
+  			min-width: 440px;
+  			background: #fff;
+  			margin: 0 auto;
+  		}
 
 
-					} else {
-						navbar.classList.remove("navstick");
+  		/*  VIDEO PLAYER CONTAINER
+ 		############################### */
+  		.vid-container {
+		    position: relative;
+		    padding-bottom: 52%;
+		    padding-top: 30px;
+		    height: 0;
+        width:70%;
+        float:left;
+		}
 
-					}
-				}
+		.vid-container iframe,
+		.vid-container object,
+		.vid-container embed {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    min-height: 360px;
+		}
+
+
+		/*  VIDEOS PLAYLIST
+ 		############################### */
+		.vid-list-container {
+			width: 30%;
+      height:360px;
+			overflow: hidden;
+      float:right;
+		}
+
+    .vid-list-container:hover, .vid-list-container:focus {
+       overflow-y: auto;
+     }
+
+		ol#vid-list {
+      margin:0;
+      padding:0;
+      background: #222;
+		}
+
+    ol#vid-list li {
+		  list-style: none;
+    }
+
+    ol#vid-list li a {
+      text-decoration: none;
+      background-color: #222;
+      height:55px;
+      display:block;
+      padding:10px;
+    }
+
+    ol#vid-list li a:hover {
+      background-color:#666666
+    }
+
+		.vid-thumb {
+      float:left;
+			margin-right: 8px;
+		}
+
+    .active-vid {
+      background:#3A3A3A;
+    }
+
+		#vid-list .desc {
+			color: #CACACA;
+			font-size: 13px;
+			margin-top:5px;
+		}
+
+
+		@media (max-width: 624px) {
+			body {
+				margin: 15px;
 			}
-		</script>
-	</body>
+			.caption {
+				margin-top: 40px;
+			}
+			.vid-list-container {
+				padding-bottom: 20px;
+			}
+
+		}
+</style>
+</head>
+<body>
+
+<div class="vid-main-wrapper clearfix">
+
+  		    <!-- THE YOUTUBE PLAYER -->
+      <div class="vid-container">
+          <iframe id="vid_frame" src="https://www.youtube.com/embed/lXyAL0rjTHg?rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
+      </div>
+
+      <!-- THE PLAYLIST -->
+      <div class="vid-list-container">
+            <ol id="vid-list">
+              <li>
+                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/lXyAL0rjTHg?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/cOSEOYi9JS4/default.jpg" /></span>
+                  <div class="desc">WeatherBeater™ Product Video</div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/lXyAL0rjTHg?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/lXyAL0rjTHg/default.jpg" /></span>
+                  <div class="desc">X-act Contour® Product Video</div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/lXyAL0rjTHg?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/KHxNpXovl58/default.jpg" /></span>
+                  <div class="desc">GearBox® Product Video</div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/D_a2UBGsePQ?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/D_a2UBGsePQ/default.jpg" /></span>
+                  <div class="desc">Mud Guards Product Video</div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/vYoh2IgoBXg?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/vYoh2IgoBXg/default.jpg" /></span>
+                  <div class="desc">Wheel Well Guards Product Video</div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/RTHI_uGyfTM?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/RTHI_uGyfTM/default.jpg" /></span>
+                  <div class="desc">Cargo Liner Product Video</div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/EvTjAjLNphE?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/EvTjAjLNphE/default.jpg" /></span>
+                  <div class="desc">Husky Liners Products</div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/-Qpc79oaJQg?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                  <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/-Qpc79oaJQg/default.jpg" /></span>
+                  <div class="desc">Custom Molded Mud Guards</div>
+                </a>
+              </li>
+
+            </ul>
+       </div>
+
+
+</div>
+<script>
+$(document).ready(function () {
+  $('.vid-item').each(function(index){
+    $(this).on('click', function(){
+      var current_index = index+1;
+      $('.vid-item .thumb').removeClass('active');
+      $('.vid-item:nth-child('+current_index+') .thumb').addClass('active');
+    });
+  });
+});
+</script>
+</body>
 </html>
