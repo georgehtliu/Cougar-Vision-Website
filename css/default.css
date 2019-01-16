@@ -1664,6 +1664,7 @@ button:hover .button-text {
 		max-width: 100%;
 		box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.5);
 		margin-bottom: 1em;
+		margin-top: 5%;
 }
 
 #ypt_thumbs {
